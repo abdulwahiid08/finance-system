@@ -1,0 +1,36 @@
+GET http://127.0.0.1:8000/api/transactions
+Authorization: Bearer
+
+### GET ONE
+GET http://127.0.0.1:8000/api/transactions/fd1436a6-4602-4ab9-a7f7-bf29531899e3
+Authorization: Bearer
+
+
+### CREATE
+POST http://127.0.0.1:8000/api/transactions
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "transaction_date": "2024-01-15",
+  "description": "Purchase office supplies",
+  "entries": [
+    {
+      "account_id": "6469eb9c-6438-47d6-a9b3-3901fe0b5e3a",
+      "type": "debit",
+      "amount": 500.00,
+      "notes": "Office supplies expense"
+    },
+    {
+      "account_id": "9501eca3-0751-47f3-b354-f93643153d6e",
+      "type": "credit",
+      "amount": 500.00,
+      "notes": "Payment from cash"
+    }
+  ]
+}
+
+### DELETE
+DELETE  http://127.0.0.1:8000/api/transactions/fd1436a6-4602-4ab9-a7f7-bf29531899e3
+Authorization: Bearer
+

@@ -1,0 +1,54 @@
+GET http://127.0.0.1:8000/api/accounts
+Authorization: Bearer
+
+### GET ONE
+GET http://127.0.0.1:8000/api/accounts/9501eca3-0751-47f3-b354-f93643153d6e
+Authorization: Bearer
+
+### CREATE
+POST http://127.0.0.1:8000/api/accounts
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "name": "Cash in Debit",
+  "type": "asset",
+  "description": "Bank account balance",
+  "is_active": true,
+  "parent_id": "9501eca3-0751-47f3-b354-f93643153d6e"
+}
+
+### UPDATE
+PUT http://127.0.0.1:8000/api/accounts/9501eca3-0751-47f3-b354-f93643153d6e
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "name": "Cashh",
+  "type": "asset",
+  "description": "Bank account balance",
+  "is_active": false,
+  "parent_id": null
+}
+
+### DELETE
+DELETE http://127.0.0.1:8000/api/accounts/9501eca3-0751-47f3-b354-f93643153d6e
+Authorization: Bearer
+
+### TREE
+GET http://127.0.0.1:8000/api/accounts/tree
+Authorization: Bearer
+
+### ACTIVE ACCOUNT
+GET http://127.0.0.1:8000/api/accounts/active
+Authorization: Bearer
+
+### SUMMARY
+GET http://127.0.0.1:8000/api/accounts/summary
+Authorization: Bearer
+
+### AKSI STATUS
+POST http://127.0.0.1:8000/api/accounts/9501eca3-0751-47f3-b354-f93643153d6e/toggle
+Content-Type: application/json
+Authorization: Bearer
+
